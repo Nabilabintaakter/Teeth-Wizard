@@ -1,10 +1,8 @@
 const Feedback = ({ feedbackData }) => {
-    console.log(feedbackData);
-    const { name, review, userImage } = feedbackData;
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-[80%] max-w-[1200px] mx-auto mt-7">
             {
-                feedbackData?.map((feedback, idx) => <div className="card shadow-xl">
+                feedbackData?.map((feedback, idx) => <div key={idx} className="card shadow-xl">
                     <div className="p-4">
                         <div className="flex items-center gap-3 mb-4">
                             <img className="w-12 h-12 rounded-full object-cover" src={feedback.userImg} alt="" />

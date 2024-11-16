@@ -1,7 +1,7 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    const { treatment, image, description, cost } = service
+    const { treatment, image, description, cost,id } = service
     return (
         <div className="h-[390px] md:h-[430px] border-[1px] shadow-md rounded-lg flex flex-col gap-3">
             <figure>
@@ -18,7 +18,7 @@ const ServiceCard = ({ service }) => {
                     <p className='' title={description}>{description.slice(0, 100)}...</p>
                 </div>
                 <div className="">
-                    <button className="badge btn btn-sm rounded-xl font-bold btn-primary">Checkout More</button>
+                    <NavLink to={`/details/${id}`} className="badge btn btn-sm rounded-xl font-bold btn-primary">Checkout More</NavLink>
                 </div>
             </div>
         </div>
