@@ -51,10 +51,10 @@ const Modal = () => {
                             <button type="submit" className="btn btn-primary">Make Appointment</button>
                         </div>
                     </form>
-                    <div className="modal-action mt-2">
+                    <div className="modal-action mt-2 block px-3">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn">Close</button>
+                            <button className="btn w-full">Close</button>
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Modal from "../Modal/Modal";
 
 const Details = () => {
@@ -13,12 +13,15 @@ const Details = () => {
                 }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content text-center">
-                    <div className="max-w-md">
+                    <div className="max-w-md flex flex-col justify-center items-center">
                         <h1 className="mb-5 text-5xl font-bold">{treatment}</h1>
                         <p className="mb-5">
                             {description}
                         </p>
-                        <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn btn-primary">Book Appointment</button>
+                        <div className="flex items-center gap-3">
+                            <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn bg-yellow-500 border-none">Book Appointment</button>
+                            <Link to='/' className="btn bg-blue-500 border-none">Back to Home</Link>
+                        </div>
                     </div>
                 </div>
             </div>

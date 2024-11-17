@@ -18,7 +18,7 @@ const ServiceCard = ({ service }) => {
                     <p className='' title={description}>{description.slice(0, 100)}...</p>
                 </div>
                 <div className="">
-                    <NavLink to={`/details/${id}`} className="badge btn btn-sm rounded-xl font-bold btn-primary">Checkout More</NavLink>
+                    <NavLink to={`/details/${id}`} className="badge btn btn-md rounded-md font-bold bg-green-600 text-white w-full">Checkout More</NavLink>
                 </div>
             </div>
         </div>
