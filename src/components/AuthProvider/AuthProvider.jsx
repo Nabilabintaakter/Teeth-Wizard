@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup ,signOut, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup ,signOut, onAuthStateChanged,updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 const googleProvider = new GoogleAuthProvider();
 
@@ -20,17 +20,25 @@ const AuthProvider = ({ children }) => {
     const handleSignOut = ()=>{
         return signOut (auth)
     }
+    const handleUpdateProfile = (name,photo)=>{
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+          })
+    }
 
 
     const authInfo = {
         handleSignUp,
         handleLogin,
         handleGoogleSignIn,
-        handleSignOut
+        handleSignOut,
+        user,
+        setUser,
+        handleUpdateProfile
     }
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged (auth, (currentUser)=>{
-
+            setUser(currentUser);
             console.log(currentUser);
             return ()=>{
                 unSubscribe()
